@@ -16,7 +16,7 @@
 #include <vector>
 using namespace std;
 
-string findPalindrome(string s, int left, int right)
+string findPalindrome(const string &s, int left, int right)
 {
     int n = s.size();
     int l = left;
@@ -32,7 +32,7 @@ string findPalindrome(string s, int left, int right)
 // This is the common solution.
 // Actuatlly it's faster than DP solution under Leetcode's test
 // the below optimized DP solution need 700ms+, this needs around 250ms.
-string longestPalindrome_recursive_way(string s) {
+string longestPalindrome_recursive_way(const string &s) {
     int n = s.size();
     if (n<=1) return s;
 
@@ -55,7 +55,7 @@ string longestPalindrome_recursive_way(string s) {
 
 
 // Time/Memory Limit Exceeded
-string longestPalindrome_dp_way(string s) {
+string longestPalindrome_dp_way(const string &s) {
 
     string longest;
 
@@ -92,7 +92,7 @@ string longestPalindrome_dp_way(string s) {
 }
 
 // Optimized DP soltuion can be accepted by LeetCode.
-string longestPalindrome_dp_opt_way(string s) {
+string longestPalindrome_dp_opt_way(const string &s) {
 
     int n = s.size();
     if (n<=1) return s;
@@ -136,7 +136,7 @@ string longestPalindrome_dp_opt_way(string s) {
 }
 
 
-string longestPalindrome(string s) {
+string longestPalindrome(const string &s) {
     return longestPalindrome_dp_opt_way(s);
     return longestPalindrome_recursive_way(s);
 }
